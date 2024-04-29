@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- ciutat,codi postal, pais input -->
+
+<head>
+    <meta charset="UTF-8">
+    <title>Meteo</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Quin temps fa?</h1>
+        <form name="meteoForm" id="meteoForm" novalidate>
+            <label for="ciutat">Ciutat:</label>
+            <input type="text" name="ciutat" id="ciutat" required>
+            <label for="codi_postal">Codi Postal:</label>
+            <input type="text" name="codi_postal" id="codi_postal" required>
+            <label for="pais">Pais:</label>
+            <input type="text" name="pais" id="pais">
+            <button type="submit" value="Enviar">Enviar</button>
+        </form>
+
+
+    </div>
+
+    <div class="container hidden" >
+        <div class="card" >
+            <h1>Temps acutal del dia <span id="date"></span></h1>
+            <h2>Temps a <span id="location"></span></h2>
+            <p>Temps: <span id="weather"></span></p>
+            <img id="img" src="" alt="icona del temps">
+            <p>Temperatura: <span id="temp"></span>ºC</p>
+            <p>Humitat: <span id="humidity"></span></p>
+            <p>Velocitat del vent: <span id="wind"></span></p>
+        </div>
+    </div>
+    <div class="container hidden" >
+        <div class="card">
+            <h1>Temps de demà dia <span id="date2"></span></h1>
+            <h2>Temps a <span id="location2"></span></h2>
+            <p>Temps: <span id="weather2"></span></p>
+            <img id="img2" src="" alt="icona del temps">
+            <p>Temperatura: <span id="temp2"></span>ºC</p>
+            <p>Humitat: <span id="humidity2"></span></p>
+            <p>Velocitat del vent: <span id="wind2"></span></p>
+        </div>
+    </div>
+</body>
+<script src="ex2.js"></script>
+
+</html>

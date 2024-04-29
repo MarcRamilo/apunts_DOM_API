@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ca">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Formulari de càrrega d'imatge</title>
+  </head>
+  <body>
+    <h2>Formulari de càrrega d'imatge</h2>
+    <form id="formulario" enctype="multipart/form-data">
+      <div>
+        <label for="imatge">Selecciona una imatge:</label>
+        <input type="file" id="imatge" name="imatge" accept="image/*" />
+      </div>
+      <!-- <script src="ex8.js"></script> -->
+      <button type="button" onclick="enviarImatge()">Enviar</button>
+    </form>
+
+    <script>
+      function enviarImatge() {
+        let formData = new FormData();
+        let fileInput = document.querySelector('input[type="file"]');
+
+        // Afegeix el fitxer seleccionat al formulari
+        formData.append('file', fileInput.files[0]);
+        formData.append('upload_preset', 'NHbJwETQrD5MtE8FLoulMemjbew'); // Cambiar a tu clave de API
+
+        // Envia les dades del formulari mitjançant una petició fetch a Cloudinary
+        fetch('https://api.cloudinary.com/v1_1/641544553235219/image/upload', { // Cambiar a tu ID de Cloudinary
+          method: 'POST',
+          body: formData,
+        })
+          .then((response) => response.json())
+          .then((data) => {
+            console.log('Datos recibidos de Cloudinary:', data); // Verifica la estructura de la respuesta
+            // Aquí puedes manejar la respuesta, por ejemplo, mostrar la URL de la imagen cargada
+            if (data && data.url) {
+              alert('Imatge carregada amb èxit. URL: ' + data.url);
+            } else {
+              alert("No s'ha pogut obtenir la URL de la imatge carregada.");
+            }
+          })
+
+          .catch((error) => {
+            console.error('Error en carregar la imatge a Cloudinary:', error);
+            alert('Ha ocorregut un error en carregar la imatge.');
+          });
+      }
+    </script>
+  </body>
+</html>

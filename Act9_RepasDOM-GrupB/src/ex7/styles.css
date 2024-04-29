@@ -1,0 +1,16 @@
+.responsive-img {
+    max-width: 400px;
+    height: auto;
+}
+
+.responsive-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    list-style-type: none;
+    padding: 0;
+}
+
+.responsive-gallery li {
+    margin: 10px;
+}
