@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Formulari</title>
+    <link rel="stylesheet" href="styles.css">
+
+  </head>
+  <body>
+    <form name="" id="" novalidate>
+      <h1>Registra't per saber el temps</h1>
+      <label for="nom">Nom:</label>
+      <input type="text" id="nom" name="nom" required /><br />
+      <label for="cognom">Cognom:</label>
+      <input type="text" id="cognom" name="cognom" required /><br />
+      <label for="correu">Correu:</label>
+      <input type="email" id="correu" name="correu" required /><br />
+      <label for="contrasenya">Contrasenya:</label>
+      <input
+        type="password"
+        id="contrasenya"
+        name="contrasenya"
+        required
+      /><br />
+      <label for="dni">DNI:</label>
+      <input type="text" id="dni" name="dni" required /><br />
+      <label for="data_naixement">Data de naixement:</label>
+      <input
+        type="date"
+        id="data_naixement"
+        name="data_naixement"
+        required
+      /><br />
+      <label for="sexe">Gènere:</label>
+      <select id="genere" name="genere" required>
+        <option value="home">Home</option>
+        <option value="dona">Dona</option>
+        <option value="no-binari">No binari</option>
+        <option value="altre">Altres</option></select
+      ><br />
+      <label for="termes_condicions">Acceptar termes i condicions:</label><br />
+      <input
+        type="checkbox"
+        id="termes_condicions"
+        name="termes_condicions"
+        required
+      /><br />
+      <button type="submit" value="Enviar">Enviar</button>
+    </form>
+    <script src="ex1.js"></script>
+
+  </body>
+</html>

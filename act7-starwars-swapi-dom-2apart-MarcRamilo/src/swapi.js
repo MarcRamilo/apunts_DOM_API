@@ -173,33 +173,33 @@ async function createMovie(id) {
   return new Movie(movie.name, movie.characters);
 }
 
-export class Movie {
-  #characterUrls = [];
+// export class Movie {
+//   #characterUrls = [];
 
-  constructor(name, characterUrls) {
-    this.name = name;
-    this.#characterUrls = characterUrls;
-  }
+//   constructor(name, characterUrls) {
+//     this.name = name;
+//     this.#characterUrls = characterUrls;
+//   }
 
-  async getCharacters() {
-    return Promise.all(this.#characterUrls.map(getCharacterName));
-  }
+//   async getCharacters() {
+//     return Promise.all(this.#characterUrls.map(getCharacterName));
+//   }
 
-  async getHomeworlds() {
-    const namesAndHomeworlds = await Promise.all(
-      this.#characterUrls.map(_getCharacterNameAndHomeworld)
-    );
-    const homeworlds = namesAndHomeworlds.map((item) => item.homeworld);
-    const uniqueHomeWorldsSet = new Set(homeworlds);
-    const uniqueHomeworldArray = Array.from(uniqueHomeWorldsSet);
-    return uniqueHomeworldArray;
-  }
+//   async getHomeworlds() {
+//     const namesAndHomeworlds = await Promise.all(
+//       this.#characterUrls.map(_getCharacterNameAndHomeworld)
+//     );
+//     const homeworlds = namesAndHomeworlds.map((item) => item.homeworld);
+//     const uniqueHomeWorldsSet = new Set(homeworlds);
+//     const uniqueHomeworldArray = Array.from(uniqueHomeWorldsSet);
+//     return uniqueHomeworldArray;
+//   }
 
-  async getHomeworldsReverse() {
-    const homeworlds = await this.getHomeworlds();
-    return homeworlds.sort().reverse();
-  }
-}
+//   async getHomeworldsReverse() {
+//     const homeworlds = await this.getHomeworlds();
+//     return homeworlds.sort().reverse();
+//   }
+// }
 
 export default {
   getMovieCount,

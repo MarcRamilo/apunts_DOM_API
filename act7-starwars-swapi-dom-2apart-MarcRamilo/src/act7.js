@@ -60,7 +60,9 @@ function addChangeEventToSelectHomeworld() {
 // Handle the change event of the homeworld select dropdown
 async function _handleOnSelectHomeworldChanged(event) {
   const homeworld = event.target.value;
-const characters = await swapi.getMovieCharactersAndHomeworlds(1);
+  const idPelicula = document.querySelector('#select-movie').value;
+
+const characters = await swapi.getMovieCharactersAndHomeworlds(idPelicula);
 const filteredCharacters = characters.characters.filter(character => character.homeworld === homeworld);
   //if filteredCharacters is empty, show a missatge
   if (filteredCharacters.length === 0) {
